@@ -20,3 +20,33 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+/*
+|--------------------------------------------------------------------------
+|  Routes for admin
+|--------------------------------------------------------------------------
+|
+| this routes access for only admin
+|
+*/
+Route::group(['middleware' => ['admin', 'auth']], function(){
+	Route::get('admin/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.dashboard');
+});
+
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+|  Routes for admin
+|--------------------------------------------------------------------------
+|
+| this routes access for only admin
+|
+*/
+Route::group(['middleware' => ['user', 'auth']], function(){
+	Route::get('user/dashboard', [App\Http\Controllers\User\UserController::class, 'index'])->name('user.dashboard');
+});
