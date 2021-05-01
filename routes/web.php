@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\User\UserDashboardComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,7 @@ Auth::routes();
 |
 */
 Route::group(['middleware' => ['admin', 'auth']], function(){
-	Route::get('admin/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.dashboard');
+	Route::get('admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
 });
 
 
@@ -46,5 +48,5 @@ Route::group(['middleware' => ['admin', 'auth']], function(){
 |
 */
 Route::group(['middleware' => ['user', 'auth']], function(){
-	Route::get('user/dashboard', [App\Http\Controllers\User\UserController::class, 'index'])->name('user.dashboard');
+	Route::get('user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
 });
