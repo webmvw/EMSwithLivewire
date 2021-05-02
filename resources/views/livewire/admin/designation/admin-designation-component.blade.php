@@ -3,17 +3,17 @@
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3>Manage Department</h3>
+        <h3>Manage Designation</h3>
       </div>
     </div>
 
     <div class="clearfix"></div>
 
-    <div class="modal fade" id="departmentDeleteModel" tabindex="-1" role="dialog" aria-labelledby="departmentDeleteDataModel" aria-hidden="true">
+    <div class="modal fade" id="designationDeleteModel" tabindex="-1" role="dialog" aria-labelledby="designationDeleteDataModel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="departmentDeleteDataModel">Delete Item</h5>
+	        <h5 class="modal-title" id="designationDeleteDataModel">Delete Item</h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
@@ -35,7 +35,7 @@
       <div class="col-md-8 col-sm-8">
         <div class="card">
 			<div class="card-header bg-info">
-				<span style="color: #fff">Department List</span>
+				<span style="color: #fff">Designation List</span>
 			</div>
 			<div class="card-body">
 				@if(Session::has('delete_success'))
@@ -45,12 +45,12 @@
 					<thead>
 						<tr>
 							<th>SL</th>
-							<th>Department</th>
+							<th>Designation</th>
 							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($departments as $key=>$value)
+						@foreach($designations as $key=>$value)
 						<tr>
 							<td>{{$key+1}}</td>
 							<td>{{$value->name}}</td>
@@ -61,20 +61,20 @@
 						@endforeach
 					</tbody>
 				</table>
-				{{$departments->links()}}
+				{{$designations->links()}}
 			</div>
 		</div>
       </div>
       <div class="col-md-4 col-sm-4">
       	<div class="card">
 			<div class="card-header bg-info">
-				<span style="color: #fff">Add Department</span>
+				<span style="color: #fff">Add Designation</span>
 			</div>
 			<div class="card-body">
 				@if(Session::has('success'))
                 <div style="color:green;margin-bottom:15px">{{Session::get('success')}}</div>
                 @endif
-				<form wire:submit.prevent="departmentStore">
+				<form wire:submit.prevent="designationStore">
 					<div class="form-group">
 						<label id="name">Name</label>
 						<input type="text" wire:model="name" id="name" class="form-control">

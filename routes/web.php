@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\Department\AdminDepartmentComponent;
+use App\Http\Livewire\Admin\Designation\AdminDesignationComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,7 @@ Auth::routes();
 Route::group(['middleware' => ['admin', 'auth']], function(){
 	Route::get('admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
 	Route::get('admin/department', AdminDepartmentComponent::class)->name('admin.department');
+	Route::get('admin/designation', AdminDesignationComponent::class)->name('admin.designation');
 });
 
 

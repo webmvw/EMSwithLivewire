@@ -57,6 +57,7 @@
                   <li><a><i class="fa fa-edit"></i> Generel<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('admin.department')}}">Department</a></li>
+                      <li><a href="{{route('admin.designation')}}">Designation</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -200,6 +201,12 @@
       });
       window.addEventListener('closeDepartmentDeleteModel', event=>{
         $("#departmentDeleteModel").modal('hide');
+      });
+      window.addEventListener('openDesignationDeleteModel', event=>{
+        $("#designationDeleteModel").modal('show');
+      });
+      window.addEventListener('closeDesignationDeleteModel', event=>{
+        $("#designationDeleteModel").modal('hide');
       });
     </script>
   </body>
