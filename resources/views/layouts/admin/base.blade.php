@@ -12,6 +12,8 @@
 
     <!-- Bootstrap -->
     <link href="{{ asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- datatable css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/build/css/jquery.dataTables.min.css')}}">
     <!-- Font Awesome -->
     <link href="{{ asset('assets/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- NProgress -->
@@ -36,11 +38,15 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="{{ asset('assets/build/images/img.jpg') }}" alt="..." class="img-circle profile_img">
+                @if(Auth::user()->image == null)
+                <img src="{{ asset('assets/images/user.png') }}" alt="user image" class="img-circle profile_img">
+                @else
+                <img src="{{ asset('assets/images/employee/'.Auth::user()->image) }}" alt="{{Auth::user()->name}}" class="img-circle profile_img">
+                @endif
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>{{Auth::user()->name}}</h2>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -58,6 +64,7 @@
                     <ul class="nav child_menu">
                       <li><a href="{{route('admin.department')}}">Department</a></li>
                       <li><a href="{{route('admin.designation')}}">Designation</a></li>
+                      <li><a href="{{route('admin.notice')}}">Notice</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Employee<span class="fa fa-chevron-down"></span></a>
@@ -84,7 +91,12 @@
                 <ul class=" navbar-right">
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      <img src="{{ asset('assets/build/images/img.jpg') }}" alt="">John Doe
+                      @if(Auth::user()->image == null)
+                      <img src="{{ asset('assets/images/user.png') }}" alt="user image">
+                      @else
+                      <img src="{{ asset('assets/images/employee/'.Auth::user()->image) }}" alt="{{Auth::user()->name}}">
+                      @endif
+                      {{Auth::user()->name}}
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item"  href="javascript:;"> Profile</a>
@@ -197,7 +209,17 @@
     <script src="{{ asset('assets/vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
     <script src="{{ asset('assets/vendors/nprogress/nprogress.js') }}"></script>
+    <!-- datatable js -->
+    <script type="text/javascript" src="{{asset('assets/build/js/jquery.dataTables.min.js')}}"></script>
     
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('#MyTable').DataTable();
+          $('#MyTable2').DataTable();
+      });
+    </script>
+
+
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('assets/build/js/custom.min.js') }}"></script>
     @livewireScripts
