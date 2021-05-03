@@ -51,8 +51,8 @@
             </div>
             <br>
             <div class="card">
-              <div class="card-header bg-info">
-                <div class="card-title">Increment Salary</div>
+              <div class="card-header">
+                <h3 style="color: #222;font-size:20px;margin:0;">Increment Salary</h3>
               </div>
               <div class="card-body">
                 @if(Session::has('increment_success'))
@@ -84,13 +84,13 @@
 
             <br>
             <div class="card">
-              <div class="card-header bg-primary">
-                <div class="card-title">Salary Increment History</div>
+              <div class="card-header">
+                <h3 style="color: #222;font-size:20px;margin:0;">Salary Increment History</h3>
               </div>
               <div class="card-body">
                 <table class="table table-striped table-bordered">
                   <thead>
-                    <tr>
+                    <tr class="table-success">
                       <th>SL</th>
                       <th>Previous Salary</th>
                       <th>Increment Amount</th>

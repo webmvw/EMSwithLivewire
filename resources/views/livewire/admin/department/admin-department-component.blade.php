@@ -55,7 +55,12 @@
 							<td>{{$key+1}}</td>
 							<td>{{$value->name}}</td>
 							<td>
+								@php
+								$getDepartment = App\Models\User::where('department_id', $value->id)->get()->count();
+								@endphp
+								@if($getDepartment == 0)
 								<button wire:click="selectItem({{$value->id}}, 'delete')"  class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+								@endif
 							</td>
 						</tr>
 						@endforeach

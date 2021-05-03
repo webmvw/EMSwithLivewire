@@ -8,6 +8,7 @@ use App\Http\Livewire\Admin\Designation\AdminDesignationComponent;
 use App\Http\Livewire\Admin\Employee\AdminEmployeeComponent;
 use App\Http\Livewire\Admin\Employee\AdminAddEmployeeComponent;
 use App\Http\Livewire\Admin\Employee\AdminDetailsEmployeeComponent;
+use App\Http\Livewire\Admin\Employee\AdminEditEmployeeComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::group(['middleware' => ['admin', 'auth']], function(){
 	Route::get('admin/employee', AdminEmployeeComponent::class)->name('admin.employee');
 	Route::get('admin/add/employee', AdminAddEmployeeComponent::class)->name('admin.add.employee');
 	Route::get('admin/employee/details/{id}', AdminDetailsEmployeeComponent::class)->name('admin.details.employee');
+	Route::get('admin/employee/edit/{id}', AdminEditEmployeeComponent::class)->name('admin.edit.employee');
 });
 
 

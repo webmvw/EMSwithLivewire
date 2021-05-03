@@ -57,7 +57,13 @@
               @endif
               <td>
                 <a href="{{route('admin.details.employee', $value->id)}}" title="Details" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
-                <a href="#" title="Edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                @php
+                $checkIncrement = App\Models\EmployeeSalaryLog::where('employee_id', $value->id)->orderBy('id', 'desc')->first();
+                $checkIncrementAmount = $checkIncrement->increment_salary;
+                @endphp
+                @if($checkIncrementAmount == 0)
+                <a href="{{route('admin.edit.employee', $value->id)}}" title="Edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                @endif
               </td>
             </tr>
 						@endforeach
