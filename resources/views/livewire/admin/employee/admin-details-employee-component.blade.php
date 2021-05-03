@@ -55,19 +55,23 @@
                 <div class="card-title">Increment Salary</div>
               </div>
               <div class="card-body">
-                <form >
-                  <input type="hidden" name="employee_id" value="{{$getEmployee->id}}">
+                @if(Session::has('increment_success'))
+                <p class="text-success">{{Session::get('increment_success')}}</p>
+                @endif
+                <form wire:submit.prevent="salaryLogStore">
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="increment_amount">Increment Amount</label>
-                        <input type="number" name="increment_amount" id="increment_amount" class="form-control" placeholder="Amount">
+                        <input type="text" wire:model="increment_salary" id="increment_amount" class="form-control" placeholder="Amount">
+                        @error('increment_salary')<p class="text-danger">{{$message}}</p>@enderror
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="effected_date">Effected Date</label>
-                        <input type="date" name="effected_date" id="effected_date" class="form-control">
+                        <input type="date" wire:model="effected_date" id="effected_date" class="form-control">
+                        @error('effected_date')<p class="text-danger">{{$message}}</p>@enderror
                       </div>
                     </div>
                     <div class="col-md-3">
@@ -84,7 +88,7 @@
                 <div class="card-title">Salary Increment History</div>
               </div>
               <div class="card-body">
-                <table class="table table-striped table-bordered" id="example2">
+                <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
                       <th>SL</th>

@@ -15,7 +15,7 @@
             <h3 style="color: #222;font-size:20px;margin:0;">Add Employee</h3>
             <a href="{{route('admin.employee')}}" class="btn btn-sm btn-success">View Employee</a>
           </div>
-          <form wire:click.prevent="employeeRegister" enctype="multipart/form-data"> 
+          <form wire:submit.prevent="employeeRegister" enctype="multipart/form-data"> 
               <div class="card-body">
                 @if(Session::has('success'))
                 <p class="text-success">{{Session::get('success')}}</p>
