@@ -73,6 +73,11 @@
                       <li><a href="{{route('admin.employee')}}">View Employee</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-edit"></i> Task<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{route('admin.task')}}">View Task</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
 

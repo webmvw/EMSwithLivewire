@@ -13,6 +13,7 @@ use App\Http\Livewire\Admin\Notice\NoticeComponent;
 use App\Http\Livewire\Admin\Notice\AddNoticeComponent;
 use App\Http\Livewire\Admin\Notice\EditNoticeComponent;
 use App\Http\Livewire\Admin\Notice\DetailsNoticeComponent;
+use App\Http\Livewire\Admin\Task\AdminTaskComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,9 @@ Route::group(['middleware' => ['admin', 'auth']], function(){
 	Route::get('admin/notice/add', AddNoticeComponent::class)->name('admin.add.notice');
 	Route::get('admin/notice/edit/{id}', EditNoticeComponent::class)->name('admin.edit.notice');
 	Route::get('admin/notice/details/{id}', DetailsNoticeComponent::class)->name('admin.details.notice');
+
+	// for task
+	Route::get('admin/task', AdminTaskComponent::class)->name('admin.task');
 });
 
 
