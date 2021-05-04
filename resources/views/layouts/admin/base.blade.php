@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/build/css/jquery.dataTables.min.css')}}">
     <!-- Font Awesome -->
     <link href="{{ asset('assets/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- select2 css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/select2/css/select2.min.css')}}">
     <!-- NProgress -->
     <link href="{{ asset('assets/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
 
@@ -75,6 +77,7 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Task<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+                      <li><a href="{{route('admin.create.task')}}">Create Task</a></li>
                       <li><a href="{{route('admin.task')}}">View Task</a></li>
                     </ul>
                   </li>
@@ -218,6 +221,16 @@
     <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
     <!-- datatable js -->
     <script type="text/javascript" src="{{asset('assets/build/js/jquery.dataTables.min.js')}}"></script>
+    <!-- select2 js -->
+    <script type="text/javascript" src="{{asset('assets/vendors/select2/js/select2.min.js')}}"></script>
+
+    <script>
+      $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+      });
+    </script>
+
     
     <script type="text/javascript">
         // Replace the <textarea id="editor1"> with a CKEditor

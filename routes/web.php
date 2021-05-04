@@ -14,6 +14,7 @@ use App\Http\Livewire\Admin\Notice\AddNoticeComponent;
 use App\Http\Livewire\Admin\Notice\EditNoticeComponent;
 use App\Http\Livewire\Admin\Notice\DetailsNoticeComponent;
 use App\Http\Livewire\Admin\Task\AdminTaskComponent;
+use App\Http\Livewire\Admin\Task\AdminAddTaskComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,7 @@ Route::group(['middleware' => ['admin', 'auth']], function(){
 
 	// for task
 	Route::get('admin/task', AdminTaskComponent::class)->name('admin.task');
+	Route::get('admin/task/create', AdminAddTaskComponent::class)->name('admin.create.task');
 });
 
 

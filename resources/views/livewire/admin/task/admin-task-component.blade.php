@@ -36,7 +36,7 @@
         <div class="card">
     			<div class="card-header d-flex justify-content-between">
     				<h3 style="color: #222;font-size:20px;margin:0;">Task List</h3>
-    				<a href="#" class="btn btn-sm btn-success">Create Task</a>
+    				<a href="{{route('admin.create.task')}}" class="btn btn-sm btn-success">Create Task</a>
     			</div>
     			<div class="card-body">
             @if(Session::has('delete_success'))
