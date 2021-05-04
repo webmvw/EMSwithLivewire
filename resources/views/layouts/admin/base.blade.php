@@ -209,9 +209,17 @@
     <script src="{{ asset('assets/vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
     <script src="{{ asset('assets/vendors/nprogress/nprogress.js') }}"></script>
+    <!-- ckeditor js -->
+    <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
     <!-- datatable js -->
     <script type="text/javascript" src="{{asset('assets/build/js/jquery.dataTables.min.js')}}"></script>
     
+    <script type="text/javascript">
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace( 'ckeditor' );
+    </script>
+
     <script type="text/javascript">
       $(document).ready(function() {
           $('#MyTable').DataTable();
@@ -236,6 +244,14 @@
       window.addEventListener('closeDesignationDeleteModel', event=>{
         $("#designationDeleteModel").modal('hide');
       });
+      window.addEventListener('openNoticeDeleteModel', event=>{
+        $("#noticeDeleteModel").modal('show');
+      });
+      window.addEventListener('closeNoticeDeleteModel', event=>{
+        $("#noticeDeleteModel").modal('hide');
+      });
     </script>
+
+
   </body>
 </html>

@@ -10,6 +10,9 @@ use App\Http\Livewire\Admin\Employee\AdminAddEmployeeComponent;
 use App\Http\Livewire\Admin\Employee\AdminDetailsEmployeeComponent;
 use App\Http\Livewire\Admin\Employee\AdminEditEmployeeComponent;
 use App\Http\Livewire\Admin\Notice\NoticeComponent;
+use App\Http\Livewire\Admin\Notice\AddNoticeComponent;
+use App\Http\Livewire\Admin\Notice\EditNoticeComponent;
+use App\Http\Livewire\Admin\Notice\DetailsNoticeComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,14 +41,26 @@ Auth::routes();
 |
 */
 Route::group(['middleware' => ['admin', 'auth']], function(){
+	// for admin dashboard
 	Route::get('admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+
+	// for department
 	Route::get('admin/department', AdminDepartmentComponent::class)->name('admin.department');
+
+	//for designation
 	Route::get('admin/designation', AdminDesignationComponent::class)->name('admin.designation');
+
+	// for employee
 	Route::get('admin/employee', AdminEmployeeComponent::class)->name('admin.employee');
 	Route::get('admin/add/employee', AdminAddEmployeeComponent::class)->name('admin.add.employee');
 	Route::get('admin/employee/details/{id}', AdminDetailsEmployeeComponent::class)->name('admin.details.employee');
 	Route::get('admin/employee/edit/{id}', AdminEditEmployeeComponent::class)->name('admin.edit.employee');
+
+	// for notice
 	Route::get('admin/notice', NoticeComponent::class)->name('admin.notice');
+	Route::get('admin/notice/add', AddNoticeComponent::class)->name('admin.add.notice');
+	Route::get('admin/notice/edit/{id}', EditNoticeComponent::class)->name('admin.edit.notice');
+	Route::get('admin/notice/details/{id}', DetailsNoticeComponent::class)->name('admin.details.notice');
 });
 
 
