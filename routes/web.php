@@ -94,4 +94,5 @@ Route::group(['middleware' => ['user', 'auth']], function(){
 	// for task
 	Route::get('user/task/list', UserTaskListComponent::class)->name('user.task.list');
 	Route::get('user/task/details/{id}', UserTaskDetailsComponent::class)->name('user.task.details');
+	Route::get('user/accept/task/list', App\Http\Livewire\User\Task\UserAcceptTaskListComponent::class)->name('user.accept.task.list');
 });

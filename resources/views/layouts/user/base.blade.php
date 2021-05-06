@@ -62,6 +62,7 @@
                   <li><a><i class="fa fa-edit"></i> Task <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('user.task.list')}}">Task List</a></li>
+                      <li><a href="{{route('user.accept.task.list')}}">Accept Task</a></li>
                     </ul>
                   </li>
                 </ul>
