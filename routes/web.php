@@ -18,6 +18,7 @@ use App\Http\Livewire\Admin\Task\AdminAddTaskComponent;
 use App\Http\Livewire\Admin\Task\AdminDetailsTaskComponent;
 use App\Http\Livewire\Admin\Task\AdminEditTaskComponent;
 use App\Http\Livewire\User\Task\UserTaskListComponent;
+use App\Http\Livewire\User\Task\UserTaskDetailsComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,4 +93,5 @@ Route::group(['middleware' => ['user', 'auth']], function(){
 
 	// for task
 	Route::get('user/task/list', UserTaskListComponent::class)->name('user.task.list');
+	Route::get('user/task/details/{id}', UserTaskDetailsComponent::class)->name('user.task.details');
 });

@@ -33,7 +33,7 @@
                   <td>{{ date('F j, Y', strtotime($value->start_date)) }}</td>
                   <td>{{ date('F j, Y', strtotime($value->end_date)) }}</td>
                   <td>
-                    <a href="#" class="btn btn-info btn-sm">Details</a>
+                    <a href="{{route('user.task.details', $value->id)}}" class="btn btn-info btn-sm">Details</a>
                     <a href="#" class="btn btn-success btn-sm">Accept</a>
                     <a href="#" class="btn btn-danger btn-sm">Reject</a>
                   </td>
