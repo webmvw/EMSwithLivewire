@@ -12,7 +12,7 @@
       <div class="col-md-12 col-sm-12">
         <div class="card">
     			<div class="card-header d-flex justify-content-between">
-    				<h3 style="color: #222;font-size:20px;margin:0;">Task List</h3>
+    				<h3 style="color: #222;font-size:20px;margin:0;">Accept Task List</h3>
     			</div>
     			<div class="card-body">
     				<table class="table table-striped table-sm" id="MyTable">

@@ -17,8 +17,6 @@ use App\Http\Livewire\Admin\Task\AdminTaskComponent;
 use App\Http\Livewire\Admin\Task\AdminAddTaskComponent;
 use App\Http\Livewire\Admin\Task\AdminDetailsTaskComponent;
 use App\Http\Livewire\Admin\Task\AdminEditTaskComponent;
-use App\Http\Livewire\User\Task\UserTaskListComponent;
-use App\Http\Livewire\User\Task\UserTaskDetailsComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,7 +90,9 @@ Route::group(['middleware' => ['user', 'auth']], function(){
 	Route::get('user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
 
 	// for task
-	Route::get('user/task/list', UserTaskListComponent::class)->name('user.task.list');
-	Route::get('user/task/details/{id}', UserTaskDetailsComponent::class)->name('user.task.details');
+	Route::get('user/task/list', App\Http\Livewire\User\Task\UserTaskListComponent::class)->name('user.task.list');
+	Route::get('user/task/details/{id}', App\Http\Livewire\User\Task\UserTaskDetailsComponent::class)->name('user.task.details');
 	Route::get('user/accept/task/list', App\Http\Livewire\User\Task\UserAcceptTaskListComponent::class)->name('user.accept.task.list');
+	Route::get('user/task/reject/{id}', App\Http\Livewire\User\Task\UserRejectTaskComponent::class)->name('user.reject.task');
+	Route::get('user/tast/rejected/list', App\Http\Livewire\User\Task\UserRejectTaskListComponent::class)->name('user.reject.task.list');
 });

@@ -63,6 +63,7 @@
                     <ul class="nav child_menu">
                       <li><a href="{{route('user.task.list')}}">Task List</a></li>
                       <li><a href="{{route('user.accept.task.list')}}">Accept Task</a></li>
+                      <li><a href="{{route('user.reject.task.list')}}">Reject Task</a></li>
                     </ul>
                   </li>
                 </ul>
