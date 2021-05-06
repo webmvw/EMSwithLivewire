@@ -268,6 +268,12 @@
       window.addEventListener('closeNoticeDeleteModel', event=>{
         $("#noticeDeleteModel").modal('hide');
       });
+      window.addEventListener('openTaskDeleteModel', event=>{
+        $("#taskDeleteModel").modal('show');
+      });
+      window.addEventListener('closeTaskDeleteModel', event=>{
+        $("#taskDeleteModel").modal('hide');
+      });
     </script>
 
 

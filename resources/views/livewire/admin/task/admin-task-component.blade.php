@@ -8,11 +8,11 @@
     </div>
 
 
-    <div class="modal fade" id="noticeDeleteModel" tabindex="-1" role="dialog" aria-labelledby="noticeDeleteDataModel" aria-hidden="true">
+    <div class="modal fade" id="taskDeleteModel" tabindex="-1" role="dialog" aria-labelledby="taskDeleteDataModel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="noticeDeleteDataModel">Delete Item</h5>
+          <h5 class="modal-title" id="taskDeleteDataModel">Delete Item</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -49,6 +49,7 @@
                   <th>title</th>
                   <th>Start Date</th>
                   <th>End Date</th>
+                  <th>Status</th>
                   <th width="14%">Action</th>
                 </tr>
     					</thead>
@@ -59,10 +60,11 @@
                   <td>{{ $value->title }}</td>
                   <td>{{ date('F j, Y', strtotime($value->start_date)) }}</td>
                   <td>{{ date('F j, Y', strtotime($value->end_date)) }}</td>
+                  <td>{{$value->status}}</td>
                   <td>
                     <a href="{{route('admin.details.task', $value->id)}}" title="Details" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
-                    <a href="#" title="Edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
-                    <button title="Delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    <a href="{{route('admin.edit.task', $value->id)}}" title="Edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                    <button wire:click="selectItem({{$value->id}}, 'delete')" title="Delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
     						@endforeach
