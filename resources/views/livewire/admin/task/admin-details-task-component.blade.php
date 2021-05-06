@@ -22,6 +22,11 @@
             <p><b>Designation: </b>{{$task->employee->designation->name}}</p>
             <p><b>Department: </b>{{$task->employee->department->name}}</p>
             <hr>
+            @if($task->accept_status == 'reject')
+            <p><b>Accept Status: </b>{{$task->accept_status}}</p>
+            <p><b>Reject Reason: </b>{{$task->reject_reason}}</p>
+            <hr>
+            @endif
             <p>{{$task->description}}</p>
     			</div>
           <div class="card-footer"></div>
