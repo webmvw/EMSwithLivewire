@@ -60,7 +60,7 @@
                   <td>{{ date('F j, Y', strtotime($value->start_date)) }}</td>
                   <td>{{ date('F j, Y', strtotime($value->end_date)) }}</td>
                   <td>
-                    <a href="#" title="Details" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                    <a href="{{route('admin.details.task', $value->id)}}" title="Details" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
                     <a href="#" title="Edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
                     <button title="Delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                   </td>
