@@ -50,6 +50,7 @@
                   <th>Start Date</th>
                   <th>End Date</th>
                   <th>Status</th>
+                  <th>Accept Status</th>
                   <th width="14%">Action</th>
                 </tr>
     					</thead>
@@ -61,6 +62,7 @@
                   <td>{{ date('F j, Y', strtotime($value->start_date)) }}</td>
                   <td>{{ date('F j, Y', strtotime($value->end_date)) }}</td>
                   <td>{{$value->status}}</td>
+                  <td>{{$value->accept_status}}</td>
                   <td>
                     <a href="{{route('admin.details.task', $value->id)}}" title="Details" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
                     <a href="{{route('admin.edit.task', $value->id)}}" title="Edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>

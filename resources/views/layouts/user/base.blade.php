@@ -59,10 +59,9 @@
                 <ul class="nav side-menu">
                   <li><a href="{{route('user.dashboard')}}"><i class="fa fa-home"></i> Home</a>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i> Task <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">General Form</a></li>
-                      <li><a href="form_advanced.html">Advanced Components</a></li>
+                      <li><a href="{{route('user.task.list')}}">Task List</a></li>
                     </ul>
                   </li>
                 </ul>
