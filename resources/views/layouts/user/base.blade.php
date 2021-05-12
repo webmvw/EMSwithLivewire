@@ -71,6 +71,7 @@
                   <li><a><i class="fa fa-edit"></i> Work Report <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('user.view.workreport')}}">Work Report List</a></li>
+                      <li><a href="{{route('user.create.workreport')}}">Create Work Report</a></li>
                     </ul>
                   </li>
                 </ul>

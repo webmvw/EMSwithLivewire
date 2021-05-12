@@ -13,7 +13,7 @@
         <div class="card">
     			<div class="card-header d-flex justify-content-between">
             <h3 style="color: #222;font-size:20px;margin:0;">Work Report List</h3>
-            <a href="#" class="btn btn-sm btn-success">Create Work Report</a>
+            <a href="{{route('user.create.workreport')}}" class="btn btn-sm btn-success">Create Work Report</a>
           </div>
     			<div class="card-body">
             @if(Session::has('success'))
