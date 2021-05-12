@@ -8,6 +8,30 @@
     </div>
 
     <div class="clearfix"></div>
+
+
+    <div class="modal fade" id="workreportDeleteModel" tabindex="-1" role="dialog" aria-labelledby="workreportDeleteDataModel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="workreportDeleteDataModel">Delete Item</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are You Sure to Delete this?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <button wire:click="deleteItem" type="button" class="btn btn-primary">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div class="card">
@@ -16,8 +40,8 @@
             <a href="{{route('user.create.workreport')}}" class="btn btn-sm btn-success">Create Work Report</a>
           </div>
     			<div class="card-body">
-            @if(Session::has('success'))
-            <div class="alert alert-success" role="alert">{{Session::get('success')}}</div>
+            @if(Session::has('delete_success'))
+            <div class="alert alert-success" role="alert">{{Session::get('delete_success')}}</div>
             @endif
             
     				<table class="table table-striped table-sm" id="MyTable">
@@ -49,7 +73,7 @@
                   <td>{{ $value->remarks }}</td>
                   <td>
                     <a href="#" title="Edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
-                    <button title="Delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    <button title="Delete" wire:click="selectItem({{$value->id}}, 'delete')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
     						@endforeach

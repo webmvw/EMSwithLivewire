@@ -19,9 +19,11 @@ class UserCreateWorkReport extends Component
 	public $problems_while_working;
 	public $remarks;
 
+
 	public function mount(){
 		$this->employee_id = Auth::user()->id;
 	}
+
 
 	public function updated($fields){
 		$this->validateOnly($fields, [

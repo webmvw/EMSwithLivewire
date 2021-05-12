@@ -225,6 +225,15 @@
       });
     </script>
 
+    <script type="text/javascript">
+      window.addEventListener('openWorkReportDeleteModel', event=>{
+        $("#workreportDeleteModel").modal('show');
+      });
+      window.addEventListener('closeWorkReportDeleteModel', event=>{
+        $("#workreportDeleteModel").modal('hide');
+      });
+    </script>
+
     @livewireScripts
   </body>
 </html>
