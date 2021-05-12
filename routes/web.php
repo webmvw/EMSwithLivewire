@@ -94,4 +94,5 @@ Route::group(['middleware' => ['user', 'auth']], function(){
 	// for work report
 	Route::get('user/workreport/view', App\Http\Livewire\User\WorkReport\UserViewWorkReport::class)->name('user.view.workreport');
 	Route::get('user/workreport/create', App\Http\Livewire\User\WorkReport\UserCreateWorkReport::class)->name('user.create.workreport');
+	Route::get('user/workreport/edit/{id}', App\Http\Livewire\User\WorkReport\UserEditWorkReport::class)->name('user.edit.workreport');
 });

@@ -56,7 +56,7 @@
                   <th>Reflection of Work</th>
                   <th>Problems While Working</th>
                   <th>Remarks</th>
-                  <th width="15%">Action</th>
+                  <th width="10%">Action</th>
                 </tr>
     					</thead>
     					<tbody>
@@ -72,7 +72,7 @@
                   <td>{{ $value->problems_while_working }}</td>
                   <td>{{ $value->remarks }}</td>
                   <td>
-                    <a href="#" title="Edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                    <a href="{{route('user.edit.workreport', $value->id)}}" title="Edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
                     <button title="Delete" wire:click="selectItem({{$value->id}}, 'delete')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
