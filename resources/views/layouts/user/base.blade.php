@@ -14,6 +14,8 @@
     <link href="{{ asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="{{ asset('assets/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- datatable css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/build/css/jquery.dataTables.min.css')}}">
     <!-- NProgress -->
     <link href="{{ asset('assets/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
 
@@ -64,6 +66,11 @@
                       <li><a href="{{route('user.task.list')}}">Task List</a></li>
                       <li><a href="{{route('user.accept.task.list')}}">Accept Task</a></li>
                       <li><a href="{{route('user.reject.task.list')}}">Reject Task</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Work Report <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{route('user.view.workreport')}}">Work Report List</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -202,9 +209,21 @@
     <script src="{{ asset('assets/vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
     <script src="{{ asset('assets/vendors/nprogress/nprogress.js') }}"></script>
+
+     <!-- datatable js -->
+    <script type="text/javascript" src="{{asset('assets/build/js/jquery.dataTables.min.js')}}"></script>
     
     <!-- Custom Theme Scripts -->
+
     <script src="{{ asset('assets/build/js/custom.min.js') }}"></script>
+
+     <script type="text/javascript">
+      $(document).ready(function() {
+          $('#MyTable').DataTable();
+          $('#MyTable2').DataTable();
+      });
+    </script>
+
     @livewireScripts
   </body>
 </html>

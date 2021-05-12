@@ -26,7 +26,7 @@
                   <th>title</th>
                   <th>Start Date</th>
                   <th>End Date</th>
-                  <th width="21%">Action</th>
+                  <th width="22%">Action</th>
                 </tr>
     					</thead>
     					<tbody>

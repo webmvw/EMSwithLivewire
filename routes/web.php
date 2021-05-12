@@ -9,14 +9,6 @@ use App\Http\Livewire\Admin\Employee\AdminEmployeeComponent;
 use App\Http\Livewire\Admin\Employee\AdminAddEmployeeComponent;
 use App\Http\Livewire\Admin\Employee\AdminDetailsEmployeeComponent;
 use App\Http\Livewire\Admin\Employee\AdminEditEmployeeComponent;
-use App\Http\Livewire\Admin\Notice\NoticeComponent;
-use App\Http\Livewire\Admin\Notice\AddNoticeComponent;
-use App\Http\Livewire\Admin\Notice\EditNoticeComponent;
-use App\Http\Livewire\Admin\Notice\DetailsNoticeComponent;
-use App\Http\Livewire\Admin\Task\AdminTaskComponent;
-use App\Http\Livewire\Admin\Task\AdminAddTaskComponent;
-use App\Http\Livewire\Admin\Task\AdminDetailsTaskComponent;
-use App\Http\Livewire\Admin\Task\AdminEditTaskComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,17 +53,20 @@ Route::group(['middleware' => ['admin', 'auth']], function(){
 	Route::get('admin/employee/edit/{id}', AdminEditEmployeeComponent::class)->name('admin.edit.employee');
 
 	// for notice
-	Route::get('admin/notice', NoticeComponent::class)->name('admin.notice');
-	Route::get('admin/notice/add', AddNoticeComponent::class)->name('admin.add.notice');
-	Route::get('admin/notice/edit/{id}', EditNoticeComponent::class)->name('admin.edit.notice');
-	Route::get('admin/notice/details/{id}', DetailsNoticeComponent::class)->name('admin.details.notice');
+	Route::get('admin/notice', App\Http\Livewire\Admin\Notice\NoticeComponent::class)->name('admin.notice');
+	Route::get('admin/notice/add', App\Http\Livewire\Admin\Notice\AddNoticeComponent::class)->name('admin.add.notice');
+	Route::get('admin/notice/edit/{id}', App\Http\Livewire\Admin\Notice\EditNoticeComponent::class)->name('admin.edit.notice');
+	Route::get('admin/notice/details/{id}', App\Http\Livewire\Admin\Notice\DetailsNoticeComponent::class)->name('admin.details.notice');
 
 	// for task
-	Route::get('admin/task', AdminTaskComponent::class)->name('admin.task');
-	Route::get('admin/task/create', AdminAddTaskComponent::class)->name('admin.create.task');
-	Route::get('admin/task/details/{id}', AdminDetailsTaskComponent::class)->name('admin.details.task');
-	Route::get('admin/task/edit/{id}', AdminEditTaskComponent::class)->name('admin.edit.task');
+	Route::get('admin/task', App\Http\Livewire\Admin\Task\AdminTaskComponent::class)->name('admin.task');
+	Route::get('admin/task/create', App\Http\Livewire\Admin\Task\AdminAddTaskComponent::class)->name('admin.create.task');
+	Route::get('admin/task/details/{id}', App\Http\Livewire\Admin\Task\AdminDetailsTaskComponent::class)->name('admin.details.task');
+	Route::get('admin/task/edit/{id}', App\Http\Livewire\Admin\Task\AdminEditTaskComponent::class)->name('admin.edit.task');
 });
+
+
+
 
 
 
@@ -95,4 +90,7 @@ Route::group(['middleware' => ['user', 'auth']], function(){
 	Route::get('user/accept/task/list', App\Http\Livewire\User\Task\UserAcceptTaskListComponent::class)->name('user.accept.task.list');
 	Route::get('user/task/reject/{id}', App\Http\Livewire\User\Task\UserRejectTaskComponent::class)->name('user.reject.task');
 	Route::get('user/tast/rejected/list', App\Http\Livewire\User\Task\UserRejectTaskListComponent::class)->name('user.reject.task.list');
+
+	// for work report
+	Route::get('user/workreport/view', App\Http\Livewire\User\WorkReport\UserViewWorkReport::class)->name('user.view.workreport');
 });
